@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习跟踪</title>
+    <style>
+        .tab {
+            /* width: 800px; */
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .tab_list {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab_list li {
+            padding: 10px 20px;
+            cursor: pointer;
+            list-style: none;
+            margin-right: 5px;
+            border-radius: 4px 4px 0 0;
+            background: #f5f5f5;
+            outline: none;
+            /* 移除默认焦点样式 */
+        }
+
+        .tab_list li.current {
+            background: #1890ff;
+            color: white;
+        }
+
+        .tab_list li:focus {
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.5);
+        }
+
+        .tab_con .item {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
+            min-height: 200px;
+        }
+
+        .tab_con .item:first-child {
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="blog/css/Wise_Reminder.css" />
+</head>
+
+<body>
+    <div class="tab">
+        <ul class="tab_list" role="tablist">
+            <li class="current" role="tab" aria-selected="true" tabindex="0">记事本</li>
+            <li role="tab" aria-selected="false" tabindex="0">学习进度</li>
+            <li role="tab" aria-selected="false" tabindex="0">社区</li>
+            <li role="tab" aria-selected="false" tabindex="0">资源</li>
+            <li role="tab" aria-selected="false" tabindex="0">投诉</li>
+        </ul>
+        <div class="tab_con">
+            <div class="item" role="tabpanel">
+                <div class="container">
+                    <h1>待办事项清单</h1>
+                    <input type="text" id="task-input" placeholder="输入新任务...">
+
+                    <div class="buttons">
+                        <button id="add-btn">添加事项</button>
+                        <button id="clear-btn">清空列表</button>
+                    </div>
+
+                    <div id="task-list"></div>
+
+                    <p>待办事项总数：<span id="task-counter" class="counter">0</span></p>
+                    <p>已完成事项：<span id="completed-counter" class="counter completed-counter">0</span></p>
+                </div>
+            </div>
+            <div class="item" role="tabpanel">规格与包装模块内容</div>
+            <div class="item" role="tabpanel">售后保障模块内容</div>
+            <div class="item" role="tabpanel">商品评价(50000)模块内容</div>
+            <div class="item" role="tabpanel">手机社区模块内容</div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabList = document.querySelector('.tab_list');
+            const tabs = tabList.querySelectorAll('li');
+            const items = document.querySelectorAll('.item');
+            let currentIndex = 0;
+
+            // 初始化设置
+            function setTab(index) {
+                // 更新标签样式
+                tabs.forEach((tab, i) => {
+                    tab.classList.toggle('current', i === index);
+                    tab.setAttribute('aria-selected', i === index);
+                });
+
+                // 更新内容显示
+                items.forEach((item, i) => {
+                    item.style.display = i === index ? 'block' : 'none';
+                });
+
+                currentIndex = index;
+            }
+
+            // 鼠标点击事件
+            tabList.addEventListener('click', function (e) {
+                if (e.target.tagName === 'LI') {
+                    const clickedIndex = Array.from(tabs).indexOf(e.target);
+                    setTab(clickedIndex);
+                    tabs[clickedIndex].focus(); // 点击后获取焦点
+                }
+            });
+
+            // 键盘事件
+            tabs.forEach(tab => {
+                tab.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const clickedIndex = Array.from(tabs).indexOf(e.target);
+                        setTab(clickedIndex);
+                    } else if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        let newIndex;
+                        if (e.key === 'ArrowRight') {
+                            newIndex = (currentIndex + 1) % tabs.length;
+                        } else {
+                            newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+                        }
+                        setTab(newIndex);
+                        tabs[newIndex].focus();
+                    } else if (e.key === 'Home') {
+                        e.preventDefault();
+                        setTab(0);
+                        tabs[0].focus();
+                    } else if (e.key === 'End') {
+                        e.preventDefault();
+                        setTab(tabs.length - 1);
+                        tabs[tabs.length - 1].focus();
+                    }
+                });
+            });
+
+            // 初始焦点设置
+            tabs[0].focus();
+        });
+    </script>
+    <script src="blog/js/Wise_Reminder.js"></script>
+</body>
+
+</html>
