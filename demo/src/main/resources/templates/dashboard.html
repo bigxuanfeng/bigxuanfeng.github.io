@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Learning Tracker</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Welcome, <span th:text="${#authentication.name}"></span>!</h1>
+        <a th:href="@{/logout}">Logout</a>
+    </header>
+
+    <section class="progress-section">
+        <h2>Your Learning Progress</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Language</th>
+                <th>Progress</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="progress : ${userProgress}">
+                <td th:text="${progress.language.name}"></td>
+                <td>
+                    <div class="progress-bar">
+                        <div class="progress-fill"
+                             th:style="'width:' + ${progress.progressPercentage} + '%;'">
+                            <span th:text="${progress.progressPercentage} + '%'"></span>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <form th:action="@{/update-progress}" method="post">
+                        <input type="hidden" name="languageId" th:value="${progress.language.id}">
+                        <input type="number" name="progress" min="0" max="100" required>
+                        <button type="submit">Update</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="community-section">
+        <h2>Community Progress</h2>
+        <table>
+            <!-- Similar table structure for community progress -->
+        </table>
+    </section>
+</div>
+</body>
+</html>
