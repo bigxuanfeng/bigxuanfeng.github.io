@@ -1,0 +1,105 @@
+:root {
+    --primary-color: #106ff3;
+    --complete-color: #27ae60;
+    --incomplete-color: #bdc3c7;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.progress-container {
+    background: #ecf0f1;
+    height: 20px;
+    border-radius: 10px;
+    margin: 40px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--complete-color);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    width: 0;
+}
+
+.level-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.level-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--incomplete-color);
+}
+
+.status-indicator.completed {
+    background: var(--complete-color);
+}
+
+.confirm-btn {
+    padding: 8px 16px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.confirm-btn.completed {
+    background: var(--complete-color);
+    cursor: not-allowed;
+}
+
+.level-content {
+    padding: 20px;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    display: none;
+}
+
+.requirements {
+    margin: 10px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 6px;
+}
+
+ul {
+    margin: 10px 0;
+    padding-left: 25px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
