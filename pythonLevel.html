@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Python学习进度跟踪</title>
+    <link rel="stylesheet" href="blog/css/pythonlevel.css">
+</head>
+
+<body>
+    <div style="padding: 10px;border-style: inset;background-color: #ffa500;">
+    <a href="../index.html"><button style="height: 50px;width: 200px; color: #d3940a;font-size: 20px;">《=返回主页</button></a>
+    <h1>Python学习进度追踪</h1>
+
+
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- Level 1 -->
+    <div class="level-card" id="level-1">
+        <div class="level-header">
+            <h2>Level 1: 零基础入门</h2>
+            <div class="controls">
+                <button class="confirm-btn">确认完成</button>
+                <div class="status-indicator"></div>
+            </div>
+        </div>
+        <div class="level-content">
+            <div class="requirements">
+                <strong>目标：</strong>
+                <p>理解基础语法，能写简单脚本。</p>
+                <strong>✓ 完成要求：</strong>
+                <ul>
+                    <li>安装Python及IDE(PyCharm/VSCode/Jupyter)</li>
+                    <li>掌握变量、数据类型、流程控制</li>
+                    <li>实战：完成温度转换器、猜数字游戏项目</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Level 2 -->
+    <div class="level-card" id="level-2">
+        <div class="level-header">
+            <h2>Level 2: Python特性与核心库</h2>
+            <div class="controls">
+                <button class="confirm-btn">确认完成</button>
+                <div class="status-indicator incomplete"></div>
+            </div>
+        </div>
+        <div class="level-content">
+            <div class="requirements">
+                <strong>目标：</strong>
+                <p>掌握Python特有语法和常用内置库。</p>
+                <strong>✓ 完成要求：</strong>
+                <ul>
+                    <li>掌握列表推导式与生成器</li>
+                    <li>熟练使用常用标准库os/sys/datetime/json库</li>
+                    <li>实战：完成文件批量重命名工具</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Level 3 -->
+    <div class="level-card" id="level-3">
+        <div class="level-header">
+            <h2>Level 3: 面向对象与模块化</h2>
+            <div class="controls">
+                <button class="confirm-btn">确认完成</button>
+                <div class="status-indicator incomplete"></div>
+            </div>
+        </div>
+        <div class="level-content">
+            <div class="requirements">
+                <strong>目标：</strong>
+                <p>理解Python面向对象编程与代码组织。</p>
+                <strong>✓ 完成要求：</strong>
+                <ul>
+                    <li>掌握类与对象（继承、多态、魔术方法）。</li>
+                    <li>掌握模块化编程（`import`、`__init__.py`）。</li>
+                    <li>掌握异常处理（`try-except-else-finally`）。</li>
+                    <li>实战：现“银行账户管理系统”（控制台版）。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Level 4 -->
+    <div class="level-card" id="level-3">
+        <div class="level-header">
+            <h2>Level 4: 数据结构与算法</h2>
+            <div class="controls">
+                <button class="confirm-btn">确认完成</button>
+                <div class="status-indicator incomplete"></div>
+            </div>
+        </div>
+        <div class="level-content">
+            <div class="requirements">
+                <strong>目标：</strong>
+                <p>掌握Python高效数据处理与算法实现。</p>
+                <strong>✓ 完成要求：</strong>
+                <ul>
+                    <li>掌握高级数据结构（集合、元组、堆、队列）。</li>
+                    <li>掌握算法基础（排序、查找、递归、动态规划）。</li>
+                    <li>熟练使用`collections`模块（`defaultdict`、`Counter`）。</li>
+                    <li>实战：实现二叉搜索树、解决LeetCode简单/中等题目。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Level 5 -->
+    <div class="level-card" id="level-3">
+        <div class="level-header">
+            <h2>Level 5: 脚本与网络编程</h2>
+            <div class="controls">
+                <button class="confirm-btn">确认完成</button>
+                <div class="status-indicator incomplete"></div>
+            </div>
+        </div>
+        <div class="level-content">
+            <div class="requirements">
+                <strong>目标：</strong>
+                <p>编写自动化脚本和基础网络应用。</p>
+                <strong>✓ 完成要求：</strong>
+                <ul>
+                    <li>掌握正则表达式（`re`模块）。</li>
+                    <li>了解网络请求（`requests`库、HTTP协议）。</li>
+                    <li>了解并掌握多线程/多进程（`threading`、`multiprocessing`）。</li>
+                    <li>实战：网页爬虫（抓取天气数据）、多线程下载器。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Level 6 -->
+    <div class="level-card" id="level-3">
+        <div class="level-header">
+            <h2>Level 6: Web开发基础</h2>
+            <div class="controls">
+                <button class="confirm-btn">确认完成</button>
+                <div class="status-indicator incomplete"></div>
+            </div>
+        </div>
+        <div class="level-content">
+            <div class="requirements">
+                <strong>目标：</strong>
+                <p>构建简单Web应用，理解前后端交互。</p>
+                <strong>✓ 完成要求：</strong>
+                <ul>
+                    <li> Web框架基础（Flask/Django的Hello World）。</li>
+                    <li>模板引擎（Jinja2）、路由与视图函数。</li>
+                    <li>数据库集成（SQLAlchemy或Django ORM）。</li>
+                    <li>实战：个人博客系统（用户注册、文章发布）。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Level 7 -->
+    <div class="level-card" id="level-3">
+        <div class="level-header">
+            <h2>Level 7: 数据分析与可视化</h2>
+            <div class="controls">
+                <button class="confirm-btn">确认完成</button>
+                <div class="status-indicator incomplete"></div>
+            </div>
+        </div>
+        <div class="level-content">
+            <div class="requirements">
+                <strong>目标：</strong>
+                <p>掌握数据科学基础工具链。</p>
+                <strong>✓ 完成要求：</strong>
+                <ul>
+                    <li>数据处理库（NumPy、Pandas）。</li>
+                    <li>可视化库（Matplotlib、Seaborn）。</li>
+                    <li>基础统计分析（描述性统计、相关性分析）。</li>
+                    <li>实战：分析电影数据集（IMDb或TMDB），生成可视化报告。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Level 8 -->
+    <div class="level-card" id="level-3">
+        <div class="level-header">
+            <h2>Level 8: 机器学习与AI</h2>
+            <div class="controls">
+                <button class="confirm-btn">确认完成</button>
+                <div class="status-indicator incomplete"></div>
+            </div>
+        </div>
+        <div class="level-content">
+            <div class="requirements">
+                <strong>目标：</strong>
+                <p>实现基础机器学习模型。</p>
+                <strong>✓ 完成要求：</strong>
+                <ul>
+                    <li>机器学习库（Scikit-learn、TensorFlow/PyTorch基础）。</li>
+                    <li>模型训练流程（数据预处理、训练/测试集划分）。</li>
+                    <li>常见算法（线性回归、决策树、KNN）。</li>
+                    <li>实战：使用Scikit-learn实现一个简单的机器学习项目。</li>
+                    <li>实战：鸢尾花分类、房价预测模型。</li>
+                    <li>进阶：使用TensorFlow/PyTorch实现一个简单的机器学习项目。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Level 9 -->
+    <div class="level-card" id="level-3">
+        <div class="level-header">
+            <h2>Level 9: 高级框架与工程化</h2>
+            <div class="controls">
+                <button class="confirm-btn">确认完成</button>
+                <div class="status-indicator incomplete"></div>
+            </div>
+        </div>
+        <div class="level-content">
+            <div class="requirements">
+                <strong>目标：</strong>
+                <p>构建复杂应用，优化代码质量。</p>
+                <strong>✓ 完成要求：</strong>
+                <ul>
+                    <li>Web框架进阶（Django REST Framework、FastAPI）。</li>
+                    <li>异步编程（`asyncio`、`aiohttp`）。</li>
+                    <li>代码测试（`pytest`）、打包（`setuptools`）、部署（Docker）。</li>
+                    <li>实战：开发RESTful API服务（用户管理+权限控制）。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Level 10 -->
+    <div class="level-card" id="level-3">
+        <div class="level-header">
+            <h2>Level 10: 架构与领域深耕</h2>
+            <div class="controls">
+                <button class="confirm-btn">确认完成</button>
+                <div class="status-indicator incomplete"></div>
+            </div>
+        </div>
+        <div class="level-content">
+            <div class="requirements">
+                <strong>目标：</strong>
+                <p>解决复杂问题，参与开源或架构设计。</p>
+                <strong>✓ 完成要求：</strong>
+                <ul>
+                    <li>高性能优化（Cython、Numba、多进程集群）。</li>
+                    <li>领域深入（自然语言处理、计算机视觉、量化交易）。</li>
+                    <li>源码阅读与贡献（如参与CPython或流行库开发）。</li>
+                    <li>实战：设计分布式爬虫系统、实现深度学习模型部署（ONNX/TensorRT）。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- 其他等级结构类似... -->
+    <script src="blog/js/pythonlevel.js"></script>
+</body>
+
+</html>
